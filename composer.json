@@ -1,6 +1,6 @@
 {
-    "name": "league/oauth2-client",
-    "description": "OAuth 2.0 Client Library",
+    "name": "stuki/oauth2-client",
+    "description": "Simple OAuth2 Client",
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
@@ -12,36 +12,24 @@
         "squizlabs/php_codesniffer": "~1.5"
     },
     "keywords": [
-        "oauth",
         "oauth2",
-        "authorization",
-        "authentication",
-        "idp",
-        "identity",
-        "sso",
-        "single sign on"
+	"google",
+	"facebook"
     ],
     "authors": [
-        {
-            "name": "Alex Bilbie",
-            "email": "hello@alexbilbie.com",
-            "homepage": "http://www.alexbilbie.com",
-            "role": "Developer"
+	{
+            "name": "Tom Anderson",
+            "email": "tom.h.anderson@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "League\\OAuth2\\Client\\": "src/"
+            "Stuki\\OAuth2\\Client\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\OAuth2\\Client\\Test\\": "test/src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.3-dev"
+            "Stuki\\OAuth2\\Client\\Test\\": "test/src/"
         }
     }
 }
