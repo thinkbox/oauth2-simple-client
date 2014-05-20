@@ -33,7 +33,6 @@ Installation
 ```sh
 $ php composer.phar require stuki/oauth2-simple-client dev-master
 ```
-For composer documentation, please refer to [getcomposer.org](http://getcomposer.org/).
 
 
 Use
@@ -54,15 +53,13 @@ if ( ! isset($_GET['code'])) {
     header('Location: ' . $provider->getAuthorizationUrl(array('state' => 'token'));
     exit;
 } else {
-    // Get an authorization token
-    $token = $provider->getAccessToken('authorization_code', [
-        'code' => $_GET['code']
-    ]);
-
     try {
+        // Get an authorization token
         $token = $provider->getAccessToken('authorization_code', [
             'code' => $_GET['code'],
         ]);
+    } catch (Client\Exception\IDPException as IDPException) {
+        // Handle error from oauth2 server
     } catch (\Exception $e) {
         die('handle exception');
     }
