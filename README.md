@@ -24,7 +24,7 @@ Included Providers
 About
 -----
 
-OAuth2 Simple Client is a fork of the popular [league/oauth2-client](https://github.com/thephpleague/oauth2-client/tree/2dde0d98f98a242a681a5cdfa354331fe2832d5f).  OAuth2 Simple Client is a rewrite of that code and includes unit testing and a completely overhauled engine.
+OAuth2 Simple Client is a fork of the popular [league/oauth2-client](https://github.com/thephpleague/oauth2-client/tree/2dde0d98f98a242a681a5cdfa354331fe2832d5f) and includes unit testing and a completely overhauled engine.
 
 Beyond unit testing this library is tested against each provider manually [using StukiOrg/oauth2-simple-client-test](https://github.com/StukiOrg/oauth2-simple-client-test), a complete testing framework application.
 
