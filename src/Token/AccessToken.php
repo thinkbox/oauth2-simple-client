@@ -17,11 +17,6 @@ class AccessToken
     public $expires_in;
 
     /**
-     * @var int expires
-     */
-    public $expires;
-
-    /**
      * @var  string  refreshToken
      */
     public $refreshToken;
@@ -60,7 +55,7 @@ class AccessToken
         }
 
         // The OAuth2 spec works in expires_in values and
-        // not expiratory dates (as previously coded)
+        // not expiratory dates
         if (isset($options['expires_in'])) {
             $this->expires_in = $options['expires_in'];
         } elseif (isset($options['expires'])) {
@@ -68,9 +63,7 @@ class AccessToken
             $this->expires_in = $options['expires'];
         }
 
-        $this->expires = time() + $this->expires_in;
-
-        // Grab a refresh token so we can update access tokens when they expires
+        // Grab a refresh token so we can update access tokens if expired
         if (isset($options['refresh_token'])) {
             $this->refreshToken = $options['refresh_token'];
         }
