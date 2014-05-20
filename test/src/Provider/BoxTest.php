@@ -57,8 +57,7 @@ class BoxTest extends \PHPUnit_Framework_TestCase
         $token = $this->provider->getAccessToken('authorization_code', array('code' => 'mock_authorization_code'));
 
         $this->assertEquals('mock_access_token', $token->accessToken);
-        $this->assertLessThanOrEqual(time() + 3600, $token->expires);
-        $this->assertGreaterThanOrEqual(time(), $token->expires);
+        $this->assertEquals(3600, $token->expires_in);
         $this->assertEquals('mock_refresh_token', $token->refreshToken);
         $this->assertEquals('1', $token->uid);
     }
