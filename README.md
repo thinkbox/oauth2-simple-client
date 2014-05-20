@@ -91,3 +91,13 @@ $provider = new Client\Provider\<ProviderName>(array(
 $grant = new Client\Grant\RefreshToken();
 $token = $provider->getAccessToken($grant, ['refresh_token' => $refreshToken]);
 ```
+
+## Credits
+
+- [Alex Bilbie](https://github.com/alexbilbie)
+- [Ben Corlett](https://github.com/bencorlett)
+- [James Mills](https://github.com/jamesmills)
+- [Phil Sturgeon](https://github.com/philsturgeon)
+- [Tom Anderson](https://github.com/TomHAnderson)
+- [All Contributors](https://github.com/thephpleague/oauth2-client/contributors)
+
