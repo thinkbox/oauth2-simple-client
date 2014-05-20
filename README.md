@@ -67,13 +67,8 @@ if ( ! isset($_GET['code'])) {
     }
 
     // Store the access token for future use 
-    echo $token->access_token;
-    
-    // Some providers support refresh tokens
-    echo $token->refresh_token;
-
-    // Number of seconds until the access token expires; consider refreshing
-    echo $token->expires_in;
+    // See Stuki\OAuth2\Client\Token\AccessToken for all returned properites
+    $SESSION['oauth']['access_token'] = $token->access_token;
 
     // Some user details are provided through the client
     // See Stuki\OAuth2\Client\Entity\User
