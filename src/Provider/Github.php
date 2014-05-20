@@ -1,8 +1,8 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace Stuki\OAuth2\Client\Provider;
 
-use League\OAuth2\Client\Entity\User;
+use Stuki\OAuth2\Client\Entity\User;
 
 class Github extends AbstractProvider
 {
@@ -19,12 +19,12 @@ class Github extends AbstractProvider
         return 'https://github.com/login/oauth/access_token';
     }
 
-    public function urlUserDetails(\League\OAuth2\Client\Token\AccessToken $token)
+    public function urlUserDetails(\Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return 'https://api.github.com/user?access_token='.$token;
     }
 
-    public function userDetails($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userDetails($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         $user = new User;
 
@@ -44,17 +44,17 @@ class Github extends AbstractProvider
         return $user;
     }
 
-    public function userUid($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userUid($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return $response->id;
     }
 
-    public function userEmail($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userEmail($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return isset($response->email) && $response->email ? $response->email : null;
     }
 
-    public function userScreenName($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userScreenName($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return $response->name;
     }

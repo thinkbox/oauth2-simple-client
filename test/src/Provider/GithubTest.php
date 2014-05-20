@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Provider;
+namespace StukiTest\OAuth2\Client\Test\Provider;
 
 use \Mockery as m;
 
@@ -10,7 +10,7 @@ class GithubTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->provider = new \League\OAuth2\Client\Provider\Github(array(
+        $this->provider = new \Stuki\OAuth2\Client\Provider\Github(array(
             'clientId' => 'mock',
             'clientSecret' => 'mock_secret',
             'redirectUri' => 'none',

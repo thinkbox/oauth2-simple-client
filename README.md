@@ -1,29 +1,16 @@
-# OAuth 2.0 Client
+OAuth2 Client
+=============
 
-[![Build Status](https://travis-ci.org/thephpleague/oauth2-client.png?branch=master)](https://travis-ci.org/thephpleague/oauth2-client)
-[![Coverage Status](https://coveralls.io/repos/thephpleague/oauth2-client/badge.png)](https://coveralls.io/r/thephpleague/oauth2-client)
-[![Total Downloads](https://poser.pugx.org/league/oauth2-client/downloads.png)](https://packagist.org/packages/league/oauth2-client)
-[![Latest Stable Version](https://poser.pugx.org/league/oauth2-client/v/stable.png)](https://packagist.org/packages/league/oauth2-client)
+[![Build Status](https://travis-ci.org/stuki/oauth2-client.png?branch=master)](https://travis-ci.org/stuki/oauth2-client)
+[![Coverage Status](https://coveralls.io/repos/stuki/oauth2-client/badge.png)](https://coveralls.io/r/stuki/oauth2-client)
+[![Total Downloads](https://poser.pugx.org/stuki/oauth2-client/downloads.png)](https://packagist.org/packages/stuki/oauth2-client)
+[![Latest Stable Version](https://poser.pugx.org/stuki/oauth2-client/v/stable.png)](https://packagist.org/packages/stuki/oauth2-client)
 
-This package makes it stupidly simple to integrate your application with OAuth 2.0 identity providers. 
-
-Everyone is used to seeing those "Connect with Facebook/Google/etc" buttons around the Internet and social network
-integration is an important feature of most web-apps these days. Many of these sites use an Authentication and Authorization standard called OAuth 2.0.
-
-It will work with any OAuth 2.0 provider (be it an OAuth 2.0 Server for your own API or Facebook) and provides support
-for popular systems out of the box. This package abstracts out some of the subtle but important differences between various providers, handles access tokens and refresh tokens, and allows you easy access to profile information on these other sites.
-
-This package is compliant with [PSR-1][], [PSR-2][] and [PSR-4][]. If you notice compliance oversights, please send 
-a patch via pull request.
-
-[PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
-[PSR-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
-[PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+This OAuth2 library is a better, simple, way to use OAuth2 in your application.  
 
 
-### Built-In Providers
-
-This package currently has built-in support for:
+Included Providers
+------------------
 
 - Eventbrite
 - Facebook
@@ -33,45 +20,24 @@ This package currently has built-in support for:
 - LinkedIn
 - Microsoft
 
-These are as many OAuth 2 services as we plan to support officially. Maintaining a wide selection of providers
-damages our ability to make this package the best it can be, especially as we progress towards v1.0. 
 
-### Third-Party Providers
-
-If you would like to support other providers, please make them available as a Composer package, then link to them
-below.
-
-These providers allow integration with other providers not included with `oauth2-client`. They may require an older version
-so please help them out with a pull request if you notice this. 
-
-- [box.com](https://github.com/StukiOrg/BoxOAuth2Client-PHP)
-- add more providers
-
-##Installation with Composer
+Installation 
+------------
 
 ```sh
-$ php composer.phar require league/oauth2-client:~0.3
+$ php composer.phar require stuki/oauth2-client dev-master
 ```
 For composer documentation, please refer to [getcomposer.org](http://getcomposer.org/).
 
-## Requirements
 
-The following versions of PHP are supported. 
-
-* PHP 5.4
-* PHP 5.5
-* PHP 5.6
-* HHVM
-
-## Usage
-
-### Authorization Code Flow
+Use
+---
 
 ```php
 $provider = new League\OAuth2\Client\Provider\<ProviderName>(array(
     'clientId'  =>  'XXXXXXXX',
     'clientSecret'  =>  'XXXXXXXX',
-    'redirectUri'   =>  'https://your-registered-redirect-uri/'
+    'redirectUri'   =>  'https://your.site/callback'
 ));
 
 if ( ! isset($_GET['code'])) {
@@ -138,6 +104,7 @@ $token = $provider->getAccessToken($grant, ['refresh_token' => $refreshToken]);
 $ phpunit
 ```
 
-## License
+Third-Party Providers
+---------------------
 
-The MIT License (MIT). Please see [License File](https://github.com/thephpleague/oauth2-client/blob/master/LICENSE) for more information.
+If you extend this library with a new OAuth2 provider your contribution of that code is welcome.

@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Token;
+namespace StukiTest\OAuth2\Client\Test\Token;
 
 class AccessTokenTest extends \PHPUnit_Framework_TestCase
 {
@@ -9,6 +9,6 @@ class AccessTokenTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidRefreshToken()
     {
-        new \League\OAuth2\Client\Token\AccessToken(array('invalid_access_token' => 'none'));
+        new \Stuki\OAuth2\Client\Token\AccessToken(array('invalid_access_token' => 'none'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Grant;
+namespace StukiTest\OAuth2\Client\Test\Grant;
 
 use \Mockery as m;
 
@@ -10,7 +10,7 @@ class AuthorizationCodeTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->provider = new \League\OAuth2\Client\Provider\Google(array(
+        $this->provider = new \Stuki\OAuth2\Client\Provider\Google(array(
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
             'redirectUri' => 'none',
@@ -19,7 +19,7 @@ class AuthorizationCodeTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAccessToken()
     {
-        $grant = new \League\OAuth2\Client\Grant\AuthorizationCode();
+        $grant = new \Stuki\OAuth2\Client\Grant\AuthorizationCode();
         $this->assertEquals('authorization_code', (string) $grant);
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Grant;
+namespace Stuki\OAuth2\Client\Grant;
 
 interface GrantInterface
 {

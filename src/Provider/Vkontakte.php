@@ -1,9 +1,9 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace Stuki\OAuth2\Client\Provider;
 
-use League\OAuth2\Client\Entity\User;
-use League\OAuth2\Client\Token\AccessToken;
+use Stuki\OAuth2\Client\Entity\User;
+use Stuki\OAuth2\Client\Token\AccessToken;
 
 class Vkontakte extends AbstractProvider
 {

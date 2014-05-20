@@ -1,8 +1,8 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace Stuki\OAuth2\Client\Provider;
 
-use League\OAuth2\Client\Entity\User;
+use Stuki\OAuth2\Client\Entity\User;
 
 class Google extends AbstractProvider
 {
@@ -24,12 +24,12 @@ class Google extends AbstractProvider
         return 'https://accounts.google.com/o/oauth2/token';
     }
 
-    public function urlUserDetails(\League\OAuth2\Client\Token\AccessToken $token)
+    public function urlUserDetails(\Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token='.$token;
     }
 
-    public function userDetails($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userDetails($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         $response = (array) $response;
 
@@ -49,17 +49,17 @@ class Google extends AbstractProvider
         return $user;
     }
 
-    public function userUid($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userUid($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return $response->id;
     }
 
-    public function userEmail($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userEmail($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return isset($response->email) && $response->email ? $response->email : null;
     }
 
-    public function userScreenName($response, \League\OAuth2\Client\Token\AccessToken $token)
+    public function userScreenName($response, \Stuki\OAuth2\Client\Token\AccessToken $token)
     {
         return array($response->given_name, $response->family_name);
     }

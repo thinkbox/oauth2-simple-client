@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Grant;
+namespace StukiTest\OAuth2\Client\Test\Grant;
 
 use \Mockery as m;
 
@@ -10,7 +10,7 @@ class RefreshTokenTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->provider = new \League\OAuth2\Client\Provider\Google(array(
+        $this->provider = new \Stuki\OAuth2\Client\Provider\Google(array(
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
             'redirectUri' => 'none',
@@ -28,13 +28,13 @@ class RefreshTokenTest extends \PHPUnit_Framework_TestCase
         $this->provider->setHttpClient($client);
 
         $token = $this->provider->getAccessToken('authorization_code', array('code' => 'mock_authorization_code'));
-        $this->assertInstanceOf('League\OAuth2\Client\Token\AccessToken', $token);
+        $this->assertInstanceOf('Stuki\OAuth2\Client\Token\AccessToken', $token);
 
-        $grant = new \League\OAuth2\Client\Grant\RefreshToken();
+        $grant = new \Stuki\OAuth2\Client\Grant\RefreshToken();
         $this->assertEquals('refresh_token', (string) $grant);
 
         $newToken = $this->provider->getAccessToken($grant, array('refresh_token' => $token->refreshToken));
-        $this->assertInstanceOf('League\OAuth2\Client\Token\AccessToken', $newToken);
+        $this->assertInstanceOf('Stuki\OAuth2\Client\Token\AccessToken', $newToken);
     }
 
     /**
@@ -52,7 +52,7 @@ class RefreshTokenTest extends \PHPUnit_Framework_TestCase
 
         $token = $this->provider->getAccessToken('authorization_code', array('code' => 'mock_authorization_code'));
 
-        $grant = new \League\OAuth2\Client\Grant\RefreshToken();
+        $grant = new \Stuki\OAuth2\Client\Grant\RefreshToken();
         $refreshToken = $this->provider->getAccessToken($grant, array('invalid_refresh_token' => $token->refreshToken));
     }
 }

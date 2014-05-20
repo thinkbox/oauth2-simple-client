@@ -1,6 +1,6 @@
 <?php
 
-namespace LeagueTests\OAuth2\Client;
+namespace StukiTest\OAuth2\Client;
 
 error_reporting(E_ALL | E_STRICT);
 chdir(__DIR__);

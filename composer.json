@@ -1,6 +1,6 @@
 {
-    "name": "stuki/oauth2-client",
-    "description": "A better and simple OAuth2 Client",
+    "name": "stuki/oauth2-simple-client",
+    "description": "A simply better OAuth2 Client",
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",

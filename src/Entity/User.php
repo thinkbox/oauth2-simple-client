@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Entity;
+namespace Stuki\OAuth2\Client\Entity;
 
 class User
 {

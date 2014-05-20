@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Token;
+namespace Stuki\OAuth2\Client\Token;
 
 use InvalidArgumentException;
 

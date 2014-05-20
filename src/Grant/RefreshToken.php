@@ -1,8 +1,8 @@
 <?php
 
-namespace League\OAuth2\Client\Grant;
+namespace Stuki\OAuth2\Client\Grant;
 
-use League\OAuth2\Client\Token\AccessToken as AccessToken;
+use Stuki\OAuth2\Client\Token\AccessToken as AccessToken;
 
 class RefreshToken implements GrantInterface
 {

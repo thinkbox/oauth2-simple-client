@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Exception;
+namespace Stuki\OAuth2\Client\Exception;
 
 class IDPException extends \Exception
 {

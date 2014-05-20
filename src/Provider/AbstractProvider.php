@@ -1,12 +1,12 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace Stuki\OAuth2\Client\Provider;
 
 use Guzzle\Service\Client as GuzzleClient;
 use Guzzle\Http\Exception\BadResponseException;
-use League\OAuth2\Client\Token\AccessToken as AccessToken;
-use League\OAuth2\Client\Exception\IDPException as IDPException;
-use League\OAuth2\Client\Grant\GrantInterface;
+use Stuki\OAuth2\Client\Token\AccessToken as AccessToken;
+use Stuki\OAuth2\Client\Exception\IDPException as IDPException;
+use Stuki\OAuth2\Client\Grant\GrantInterface;
 
 abstract class AbstractProvider
 {
@@ -79,9 +79,9 @@ abstract class AbstractProvider
 
     abstract public function urlAccessToken();
 
-    abstract public function urlUserDetails(\League\OAuth2\Client\Token\AccessToken $token);
+    abstract public function urlUserDetails(\Stuki\OAuth2\Client\Token\AccessToken $token);
 
-    abstract public function userDetails($response, \League\OAuth2\Client\Token\AccessToken $token);
+    abstract public function userDetails($response, \Stuki\OAuth2\Client\Token\AccessToken $token);
 
     public function getScopes()
     {
@@ -125,13 +125,13 @@ abstract class AbstractProvider
         if (is_string($grant)) {
             // PascalCase the grant. E.g: 'authorization_code' becomes 'AuthorizationCode'
             $className = str_replace(' ', '', ucwords(str_replace(array('-', '_'), ' ', $grant)));
-            $grant = 'League\\OAuth2\\Client\\Grant\\'.$className;
+            $grant = 'Stuki\\OAuth2\\Client\\Grant\\'.$className;
             if (! class_exists($grant)) {
                 throw new \InvalidArgumentException('Unknown grant "'.$grant.'"');
             }
             $grant = new $grant;
         } elseif (! $grant instanceof GrantInterface) {
-            $message = get_class($grant).' is not an instance of League\OAuth2\Client\Grant\GrantInterface';
+            $message = get_class($grant).' is not an instance of Stuki\OAuth2\Client\Grant\GrantInterface';
             throw new \InvalidArgumentException($message);
         }
 

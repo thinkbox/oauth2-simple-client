@@ -1,8 +1,8 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Token;
+namespace StukiTest\OAuth2\Client\Test\Token;
 
-use League\OAuth2\Client\Entity\User;
+use Stuki\OAuth2\Client\Entity\User;
 
 class UserTest extends \PHPUnit_Framework_TestCase
 {
