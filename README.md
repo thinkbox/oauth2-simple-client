@@ -21,6 +21,12 @@ Included Providers
 - Eventbrite
 
 
+About
+-----
+
+OAuth2 Simple Client is a fork of the popular league/oauth2-client.  This fork is a rewrite including unit testing and a completely overhauled engine.  The state of the forked library before being rewritten may be [browsed here](https://github.com/thephpleague/oauth2-client/tree/2dde0d98f98a242a681a5cdfa354331fe2832d5f).
+
+
 Installation 
 ------------
 
