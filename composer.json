@@ -13,8 +13,9 @@
     },
     "keywords": [
         "oauth2",
-	"google",
-	"facebook"
+	"simple",
+	"easy",
+        "oauth client"
     ],
     "authors": [
 	{
